@@ -119,7 +119,14 @@ export function PlayScreen({ end }) {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center h-screen">
+      <div className="flex flex-col justify-center items-center h-screen gap-10">
+        <div className="flex gap-3">
+          <h1 className="font-semibold text-blue">Tries</h1>
+          <p className="font-semibold text-blue bg-blue/40 px-2 rounded-md">
+            {tryCount}
+          </p>
+        </div>
+
         <div className="grid grid-cols-4 justify-center items-center rounded-lg bg-blue/10 max-w-[400px] w-[90%] aspect-square gap-3 p-3">
           {getTiles(16).map((tile, i) => (
             <Tile key={i} flip={() => flip(i)} {...tile} />
